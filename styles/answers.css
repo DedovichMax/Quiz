@@ -1,0 +1,92 @@
+.answers-text-test {
+    padding: 20px 0 20px 0;
+    display: flex;
+}
+
+.answer-text {
+    color: #DCDCF3;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.answers-text-test img {
+    margin-left: 15px;
+    color: #DCDCF3;
+    font-size: 20px;
+}
+
+.answers-text-test span {
+    color: #6933DC;
+    margin-left: 15px;
+    font-size: 20px;
+}
+
+.answers-texts {
+    color: #333333;
+    font-size: 54px;
+    padding: 40px 0 60px 0;
+    box-sizing: border-box;
+}
+
+.answers-texts span {
+    color: #6933DC;
+    font-size: 54px;
+}
+
+.answer-result {
+    color: #333333;;
+    font-size: 36px;
+    padding-bottom: 40px;
+}
+
+.answer-result span {
+    color: #6933DC;
+}
+
+.answer-option {
+    display: flex;
+    padding-bottom: 20px;
+}
+
+.answer-option label {
+    cursor: pointer;
+}
+
+
+/* стили для проверки */
+.answer-option.correct {
+    background-color: #d4edda;
+    border-color: #c3e6cb;
+    color: #155724;
+}
+
+.answer-option.incorrect {
+    background-color: #f8d7da;
+    border-color: #f5c6cb;
+    color: #721c24;
+}
+
+.answer-option {
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.answer-option input[type="radio"] {
+    margin-right: 10px;
+}
+
+.answer-option label {
+    cursor: pointer;
+}
+
+.answers-results {
+    margin-bottom: 35px;
+}
+
+.answer-result span {
+    color: #007bff;
+}
