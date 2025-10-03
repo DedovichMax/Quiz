@@ -26,7 +26,7 @@
 
                     this.loadCorrectAnswers(ansResult);
                     this.displayResults();
-                    this.updateQuizTitle(); // Добавляем обновление названия теста
+                    this.updateQuizTitle();
                 } else {
                     location.href = 'index.html';
                 }
@@ -51,7 +51,7 @@
 
         updateQuizTitle() {
             if (this.Aquiz && this.Aquiz.name) {
-                const quizTitleElement = document.querySelector('.answers-text-test span');
+                const quizTitleElement = document.getElementById('quiz-title');
                 if (quizTitleElement) {
                     quizTitleElement.textContent = this.Aquiz.name;
                 }
@@ -68,7 +68,7 @@
 
             this.Aquiz.questions.forEach((question, questionIndex) => {
                 const questionContainer = document.createElement('div');
-                questionContainer.className = 'answers-results';
+                questionContainer.className = 'question-container';
 
                 const questionTitle = document.createElement('div');
                 questionTitle.className = 'answer-result';
@@ -96,12 +96,16 @@
                     const isCorrect = this.correctAnswers[questionIndex] === answer.id;
                     const isUserChoice = this.userAnswers[questionIndex] === answer.id;
 
+                    // Отмечаем выбранный пользователем ответ
+                    if (isUserChoice) {
+                        inputElement.checked = true;
+                    }
+
+                    // Применяем стили для правильных/неправильных ответов
                     if (isCorrect) {
                         optionElement.classList.add('correct');
-                        inputElement.checked = true;
                     } else if (isUserChoice && !isCorrect) {
                         optionElement.classList.add('incorrect');
-                        inputElement.checked = true;
                     }
 
                     optionElement.appendChild(inputElement);

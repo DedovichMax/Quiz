@@ -1,6 +1,7 @@
 .answers-text-test {
     padding: 20px 0 20px 0;
     display: flex;
+    align-items: center;
 }
 
 .answer-text {
@@ -12,8 +13,6 @@
 
 .answers-text-test img {
     margin-left: 15px;
-    color: #DCDCF3;
-    font-size: 20px;
 }
 
 .answers-text-test span {
@@ -35,9 +34,11 @@
 }
 
 .answer-result {
-    color: #333333;;
+    color: #333333;
     font-size: 36px;
     padding-bottom: 40px;
+    margin-bottom: 30px;
+    border-bottom: 2px solid #DCDCF3;
 }
 
 .answer-result span {
@@ -46,47 +47,99 @@
 
 .answer-option {
     display: flex;
-    padding-bottom: 20px;
+    align-items: center;
+    margin-bottom: 15px;
+    padding: 8px 0;
 }
 
 .answer-option label {
     cursor: pointer;
+    margin-left: 12px;
+    font-size: 20px;
+    color: #333333;
 }
 
-
-/* стили для проверки */
-.answer-option.correct {
-    background-color: #d4edda;
-    border-color: #c3e6cb;
-    color: #155724;
-}
-
-.answer-option.incorrect {
-    background-color: #f8d7da;
-    border-color: #f5c6cb;
-    color: #721c24;
-}
-
-.answer-option {
-    padding: 10px;
-    margin: 5px 0;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    transition: all 0.3s ease;
-}
-
+/* Кастомные стили для радио-кнопок */
 .answer-option input[type="radio"] {
-    margin-right: 10px;
+    appearance: none;
+    -webkit-appearance: none;
+    width: 20px;
+    height: 20px;
+    border: 3px solid #6933DC;
+    border-radius: 50%;
+    margin: 0;
+    cursor: default;
+    position: relative;
+    flex-shrink: 0;
 }
 
-.answer-option label {
-    cursor: pointer;
+.answer-option input[type="radio"]:checked::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #6933DC;
+}
+
+/* Стили для правильных ответов */
+.answer-option.correct input[type="radio"] {
+    border-color: #5FDC33;
+}
+
+.answer-option.correct input[type="radio"]:checked::before {
+    background: #5FDC33;
+    display: none;
+}
+
+.answer-option.correct label {
+    color: #5FDC33;
+}
+
+/* Стили для неправильных ответов */
+.answer-option.incorrect input[type="radio"] {
+    border-color: #DC3333;
+}
+
+.answer-option.incorrect input[type="radio"]:checked::before {
+    background: #DC3333;
+    display: none;
+}
+
+.answer-option.incorrect label {
+    color: #DC3333;
 }
 
 .answers-results {
     margin-bottom: 35px;
 }
 
-.answer-result span {
-    color: #007bff;
+.answers-options {
+    margin-bottom: 40px;
+}
+
+.pass-question {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 10px;
+}
+
+.pass-question a {
+    font-size: 17px;
+    line-height: 20px;
+    color: #6933DC;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+}
+
+.pass-question a:hover {
+    text-decoration: underline;
+}
+
+.pass-question a img {
+    margin-left: 13px;
 }
